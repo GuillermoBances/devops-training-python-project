@@ -2,9 +2,9 @@ name: DockerHUb CI
 
 on:
   push:
-    branches: [ "master", "develop" ]
+    branches: [ "master", "feature/ci-strategy-jenkins" ]
   pull_request:
-    branches: [ "main", "develop" ]
+    branches: [ "main", "feature/ci-strategy-jenkins" ]
 
 jobs:
   docker:
@@ -31,5 +31,5 @@ jobs:
         with:
           file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-training-flask-app:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/devops-training-flask-app-github-runner:latest
   
